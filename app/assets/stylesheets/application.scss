@@ -35,6 +35,15 @@
   color: white;
 }
 
+.dropdown span,
+.dropdown-content .dropdown-item {
+  color: $info;
+}
+
 .notification:not(:last-child) {
   margin-bottom: 0;
+}
+
+.global-notification {
+  border-radius: 0;
 }

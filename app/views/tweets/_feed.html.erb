@@ -22,9 +22,8 @@
 
       <div class="media-content">
         <div class="content">
-          <% user = User.find(tweet.user_id) %>
-          <strong><%= user.name %></strong><br>
-          <small>@<%= user.username %></small><br>
+          <strong><%= tweet.user.name %></strong><br>
+          <small>@<%= tweet.user.username %></small><br>
           <p><%= tweet.tweet[0..140] %><%= '...' if (tweet.tweet.size > 140) %></p>
         </div>
         <hr class="dropdown-divider">
@@ -35,7 +34,7 @@
             <span class="icon"><i class='fa fa-link'></i></span>
             <% end %>
 
-            <% if current_user == user %>
+            <% if current_user == tweet.user %>
               <%= link_to edit_tweet_path(tweet), class: 'level-item' do %>
               <span class="icon"><i class="fa fa-pencil"></i></span>
               <% end %>

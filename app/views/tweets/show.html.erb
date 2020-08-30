@@ -1,9 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Tweet:</strong>
-  <%= @tweet.tweet %>
-</p>
-
-<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
-<%= link_to 'Back', tweets_path %>
+<div class="section">
+  <div class="container">
+    <div class="label">Tweet</div>
+    <div class="box">
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <p><%= @tweet.tweet %></p>
+          </div>
+          <hr class="dropdown-divider">
+        </div>
+      </article>
+      <%= link_to 'Back', tweets_path %>
+    </div>
+  </div>
+</div>

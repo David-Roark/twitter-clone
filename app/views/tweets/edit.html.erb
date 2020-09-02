@@ -2,7 +2,19 @@
   <div class="container">
     <h1 class="label">Editing Tweet</h1>
     <div class="box">
-      <%= render 'form', tweet: @tweet %>
+      <% simple_form_for @post do |f| %>
+      <div class="field">
+        <div class="control">
+          <%= f.imput :title, wrapper: false, require: true, label_html: {class: 'label'}, input_html: {class: 'input'} %>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <%= f.input :body, wrapper: false, require: true, label_html: {class: 'label'}, input_html: {class: 'textarea'} %>
+        </div>
+      </div>
+      <%= f.button :submit, class: 'button is-info'  %>
+      <% end %>
       <br>
       <%= link_to 'Back', tweets_path %>
     </div>
